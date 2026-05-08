@@ -35,19 +35,29 @@ npm run dev
 - `/forgot-password` Forgot Password
 
 
-## Added in v3
+# DayPivot
 
-- Search bar for finding categories
-- Option to change topic while answering questions
-- Improved Priority Matrix text
-- Practical decision tip on the Result screen
-- Decision tip is saved and shown in History
+DayPivot is a responsive decision-making web application designed to help users make clearer and smarter daily decisions.
 
+## Main Features
+- Smart question-based decision flows
+- Category selection system
+- Quick Search
+- Custom decision questions
+- Decision history and progress tracking
+- Responsive mobile-first design
 
-## Added in v4
+## Technologies Used
+- React
+- Vite
+- React Router
+- CSS Variables
 
-- Quick Search now works as a real search input
-- User can search categories from the Dashboard
-- User can write a custom decision question
-- Custom question opens a guided decision flow
-- Custom decision result gives a practical tip
+## Project Structure
+- Shared reusable components
+- Multiple routed pages
+- Responsive layout
+- Design System with DESIGN.md
+
+## NAME : Ariel Maor 
+## ID : 325511442
