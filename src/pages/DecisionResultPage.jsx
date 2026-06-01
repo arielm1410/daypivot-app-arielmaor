@@ -1,11 +1,47 @@
+import { useState } from "react";
 import { AlertCircle, BatteryCharging, Save, Star, Lightbulb } from "lucide-react";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import BottomNavigation from "../components/Navigation/BottomNavigation.jsx";
 import { getLastResult } from "../utils/decisionStorage.js";
+import { supabase } from "../lib/supabase.js";
 import { Link } from "react-router-dom";
 
 export default function DecisionResultPage() {
   const result = getLastResult();
+  const [isSaving, setIsSaving] = useState(false);
+
+  async function saveDecisionToSupabase() {
+    if (!result) return;
+
+    setIsSaving(true);
+
+    const { data: userData } = await supabase.auth.getUser();
+    const user = userData.user;
+
+    if (!user) {
+      alert("Please log in first");
+      setIsSaving(false);
+      return;
+    }
+
+    const { error } = await supabase.from("decisions").insert({
+      user_id: user.id,
+      title: result.category.title,
+      category: result.category.id,
+      result: result.recommendation,
+      confidence_score: result.confidence,
+      decision_tip: result.decisionTip
+    });
+
+    setIsSaving(false);
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert("Decision saved successfully!");
+  }
 
   if (!result) {
     return (
@@ -55,6 +91,7 @@ export default function DecisionResultPage() {
       </section>
 
       <h2 className="card-title" style={{ marginTop: 20 }}>Main Factors</h2>
+
       <section className="stack">
         {result.mainFactors.map((factor) => {
           const Icon = iconMap[factor.name] || Star;
@@ -72,7 +109,14 @@ export default function DecisionResultPage() {
       </section>
 
       <div style={{ marginTop: 22 }}>
-        <Link to="/history" className="primary-button"><Save size={18} /> View Saved History</Link>
+        <button className="primary-button" type="button" onClick={saveDecisionToSupabase}>
+          <Save size={18} />
+          {isSaving ? "Saving..." : "Save Decision"}
+        </button>
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <Link to="/history" className="secondary-button">View Saved History</Link>
       </div>
 
       <BottomNavigation />
