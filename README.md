@@ -57,5 +57,18 @@ Create a .env file in the project root with:
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
+## Vibe Coding Process — How AI Was Used
+
+AI tools were used throughout the entire build process, from idea to deployment:
+
+- **Ideation:** Used an AI chat assistant to brainstorm app ideas, validate the problem, and run a "5-minute test" on the top concepts before committing to DayPivot.
+- **Research:** Used AI to research competitor apps (Notion, Todoist, Google Keep), estimate market size (TAM/SAM/SOM), and draft user personas and user stories.
+- **System Planning:** Used AI to design the system architecture diagram and confirm the tech stack (React + Vite + Supabase + Vercel).
+- **Wireframes:** Used AI to generate greyscale wireframes (Login, Dashboard, Decision Questions, Decision Result) before adding visual design.
+- **Design System:** Used Google Stitch (AI design tool) to extract a design system (colors, typography, spacing) from visual inspiration and turn wireframes into styled mockups.
+- **Frontend Development:** Used an AI coding assistant to translate the Stitch designs into working React components and pages.
+- **Backend & Data Modeling:** Used AI to help design the database schema (entities, attributes, relationships) and generate the ERD before creating the actual tables in Supabase.
+- **Final Project:** Used Claude to debug a Vercel routing issue (404 on direct page refresh), connect environment variables correctly, and review the project against the grading rubric before submission.
+
 ## Author
 Ariel Maor — ID 325511442
