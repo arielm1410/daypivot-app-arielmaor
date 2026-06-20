@@ -1,63 +1,58 @@
-# DayPivot App
+# DayPivot
 
-DayPivot is a mobile-first React + Vite frontend project for a decision-making assistant.
+Quick decision-making assistant — find clarity in every decision, today.
 
-## What works in this version
+🔗 **Live app:** https://daypivot-app-arielmaor.vercel.app
 
-- Category selection by topic
-- 100 smart questions, divided into 10 categories
-- 4 answer options for every question
-- Back and Next navigation
-- Dynamic progress bar
-- Confidence score calculation
-- Decision result screen
-- History page with saved decisions and answered questions
-- Local browser storage using localStorage
-- Dummy data only, no backend connection
+## Overview
+DayPivot is a mobile-first web app that helps people make small, everyday decisions quickly. Instead of managing tasks, users answer a short set of smart questions and get an instant, confidence-scored recommendation based on a built-in priority matrix.
 
-## Run the project
+## The Problem
+People often hesitate over small decisions during the day — wasting time and mental energy weighing options, especially under time pressure. Most productivity apps focus on managing tasks, not on the actual moment of deciding.
 
+## Who It's For
+Anyone who hesitates over small, daily decisions — students juggling assignments, busy professionals making many choices a day, or simply people who feel mentally overloaded and want a quick way to think more clearly.
+
+## Competitors & Differentiation
+| Competitor | What it does | What's missing |
+|---|---|---|
+| Notion | Task & project management | No real-time decision support, just organizes existing tasks |
+| Todoist | To-do lists | Manages tasks, doesn't help choose between options |
+| Doing it manually / asking friends | The default today | Slow, inconsistent, no structured framework |
+
+**DayPivot's differentiation:** it's not another task manager — it's built specifically around the *moment of deciding*, using guided smart questions and a priority matrix to produce an instant, scored recommendation.
+
+## Tech Stack
+- **Frontend:** React + Vite, React Router
+- **Backend:** Supabase (PostgreSQL database + Auth)
+- **Hosting:** Vercel
+
+## External Services & Integrations
+| Service | Type | Used for |
+|---|---|---|
+| Supabase Auth | Authentication | User sign up / login (email + password) |
+| Supabase Postgres Database | Database | Storing profiles, decisions, answers, and priorities |
+
+## Database (ERD)
+![ERD](./ERD.png)
+
+Tables: `profiles`, `decisions`, `answers`, `priorities` — linked to Supabase's built-in `auth.users`.
+
+## Main Pages
+- `/` Login
+- `/register` Register
+- `/dashboard` Dashboard
+- `/questions` Decision Questions flow
+- `/result` Decision Result (saves to Supabase)
+- `/history` Decision History (loaded from Supabase)
+- `/profile` Profile
+- `/settings` Settings
+- `/forgot-password` Forgot Password
+
+## Run Locally
 ```bash
 npm install
 npm run dev
 ```
 
-## Main pages
-
-- `/` Login
-- `/register` Register
-- `/dashboard` Dashboard with categories and progress
-- `/questions` Category selection and question flow
-- `/result` Decision Result
-- `/history` Saved decision history
-- `/profile` Profile and progress
-- `/settings` Settings
-- `/forgot-password` Forgot Password
-
-
-# DayPivot
-
-DayPivot is a responsive decision-making web application designed to help users make clearer and smarter daily decisions.
-
-## Main Features
-- Smart question-based decision flows
-- Category selection system
-- Quick Search
-- Custom decision questions
-- Decision history and progress tracking
-- Responsive mobile-first design
-
-## Technologies Used
-- React
-- Vite
-- React Router
-- CSS Variables
-
-## Project Structure
-- Shared reusable components
-- Multiple routed pages
-- Responsive layout
-- Design System with DESIGN.md
-
-## NAME : Ariel Maor 
-## ID : 325511442
+Create a `.env` file in the project root with:
