@@ -57,18 +57,21 @@ Create a .env file in the project root with:
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-## Vibe Coding Process — How AI Was Used
+## Vibe Coding Process — How I Used AI
 
-AI tools were used throughout the entire build process, from idea to deployment:
+This entire project was built using the AI-augmented workflow taught in the course — React + Vite, Supabase, Vercel, and AI tools at every stage, exactly as the course methodology defines.
 
-- **Ideation:** Used an AI chat assistant to brainstorm app ideas, validate the problem, and run a "5-minute test" on the top concepts before committing to DayPivot.
-- **Research:** Used AI to research competitor apps (Notion, Todoist, Google Keep), estimate market size (TAM/SAM/SOM), and draft user personas and user stories.
-- **System Planning:** Used AI to design the system architecture diagram and confirm the tech stack (React + Vite + Supabase + Vercel).
-- **Wireframes:** Used AI to generate greyscale wireframes (Login, Dashboard, Decision Questions, Decision Result) before adding visual design.
-- **Design System:** Used Google Stitch (AI design tool) to extract a design system (colors, typography, spacing) from visual inspiration and turn wireframes into styled mockups.
-- **Frontend Development:** Used an AI coding assistant to translate the Stitch designs into working React components and pages.
-- **Backend & Data Modeling:** Used AI to help design the database schema (entities, attributes, relationships) and generate the ERD before creating the actual tables in Supabase.
-- **Final Project:** Used Claude to debug a Vercel routing issue (404 on direct page refresh), connect environment variables correctly, and review the project against the grading rubric before submission.
+**Ideation & Research:** I used an AI chat assistant to brainstorm app ideas, run a 5-minute validation test on the top candidates, and pressure-test the leading idea with hard questions ("why wouldn't someone just use Notion?"). I made the final call to commit to DayPivot, then used AI to research real competitors (Notion, Todoist, Google Keep) and estimate market size.
+
+**Planning & Architecture:** I directed AI to draft the system architecture and database schema, then reviewed and adjusted both — deciding which entities and relationships actually matched my product, not just what was suggested.
+
+**Design:** I built wireframes and a mood board myself, then used Google Stitch to convert my design choices (colors, fonts, spacing) into a working design system and styled mockups — keeping the structure I had already decided on.
+
+**Frontend Build:** I used an AI coding assistant to translate the approved designs into React components and pages, following the component breakdown and routing I had planned in advance.
+
+**Backend & Deployment:** I built the Supabase tables and RLS policies based on my own ERD. For final deployment, I worked with Claude to debug a Vercel routing issue that only appeared on mobile (404 on direct page loads), resume a paused Supabase project, wire up the environment variables correctly, and systematically verify the finished product against the grading rubric before submitting.
+
+**Takeaway:** AI was the tool I used at every stage — for thinking, building, and debugging — but every product decision (the problem, the audience, the design direction, what to keep and what to cut) was mine. That's the core skill this course is built around.
 
 ## Author
 Ariel Maor — ID 325511442
